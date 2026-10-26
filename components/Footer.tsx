@@ -46,7 +46,7 @@ export function Footer({ locale }: FooterProps) {
             href="#home"
           >
             <span
-              className="flex gap-1 [&_i]:block [&_i]:rotate-[-4deg] [&_i]:text-[1.55rem] [&_i]:leading-[.7] [&_i]:font-extrabold [&_i]:not-italic [&_i]:text-[var(--accent-blue)] [&_i:last-child]:text-[var(--accent-purple)]"
+              className="flex gap-1 [&_i]:block [&_i]:rotate-[-4deg] [&_i]:text-[1.55rem] [&_i]:leading-[.7] [&_i]:font-black [&_i]:not-italic [&_i]:text-[var(--foreground)] [&_i:last-child]:text-zinc-400 dark:[&_i:last-child]:text-zinc-500"
               aria-hidden="true"
             >
               <i>&lt;</i>
@@ -66,14 +66,14 @@ export function Footer({ locale }: FooterProps) {
             const Icon = socialIcons[social.icon];
             return (
               <a
-                className="grid size-[35px] place-items-center rounded-full border border-[var(--border)] bg-white/[.025] text-[var(--icon-text)] transition-[transform,color,border-color] duration-200 hover:-translate-y-[3px] hover:border-[rgba(112,164,255,.38)] hover:text-[var(--accent-link)]"
+                className="grid size-[35px] place-items-center rounded-xl border border-[var(--border)] bg-zinc-100 text-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-zinc-400 hover:text-[var(--foreground)] dark:hover:border-zinc-600"
                 href={social.href}
                 key={social.label}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={social.label}
               >
-                <Icon size={17} />
+                <Icon size={16} />
               </a>
             );
           })}
@@ -84,10 +84,10 @@ export function Footer({ locale }: FooterProps) {
             {text.footerCta}
           </p>
           <a
-            className="inline-flex h-[43px] w-auto items-center justify-center gap-2.5 whitespace-nowrap rounded-[11px] border border-[rgba(117,118,255,.75)] bg-[linear-gradient(135deg,rgba(91,140,255,.15),rgba(124,108,255,.22))] px-[17px] text-[.88rem] font-[650] shadow-[inset_0_0_20px_rgba(94,118,255,.05),0_0_20px_rgba(80,83,225,.1)] transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-0.5"
+            className="inline-flex h-[41px] w-auto items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-[18px] text-[.86rem] font-semibold transition-all hover:-translate-y-0.5 shadow-xs"
             href={`mailto:${profile.email}`}
           >
-            {text.contactNow} <ArrowRight size={17} />
+            {text.contactNow} <ArrowRight size={15} />
           </a>
         </div>
       </div>

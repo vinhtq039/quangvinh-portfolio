@@ -9,6 +9,8 @@ import { localize, navigation, profile, uiText } from '@/data/portfolio';
 const iconButtonClasses =
   'inline-flex size-[42px] cursor-pointer items-center justify-center rounded-[11px] border border-[var(--border)] bg-white/[.025] transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[rgba(112,164,255,.4)] hover:bg-[rgba(91,140,255,.09)]';
 
+const THEME_STORAGE_KEY = 'vinh-portfolio-theme';
+
 type NavbarProps = {
   locale: Locale;
   onLocaleChange: (locale: Locale) => void;
@@ -16,13 +18,30 @@ type NavbarProps = {
 
 export function Navbar({ locale, onLocaleChange }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
   const text = uiText[locale];
 
   useEffect(() => {
-    document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
-  }, [isLight]);
+    const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === 'dark') {
+      setIsLight(false);
+      document.documentElement.dataset.theme = 'dark';
+    } else {
+      setIsLight(true);
+      document.documentElement.dataset.theme = 'light';
+    }
+  }, []);
+
+  const handleToggleTheme = () => {
+    setIsLight((prev) => {
+      const next = !prev;
+      const themeValue = next ? 'light' : 'dark';
+      document.documentElement.dataset.theme = themeValue;
+      window.localStorage.setItem(THEME_STORAGE_KEY, themeValue);
+      return next;
+    });
+  };
 
   useEffect(() => {
     const sections = navigation
@@ -69,7 +88,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
           aria-label={text.homeLabel}
         >
           <span
-            className="flex gap-1 [&_i]:block [&_i]:rotate-[-4deg] [&_i]:text-[1.85rem] [&_i]:leading-[.7] [&_i]:font-extrabold [&_i]:not-italic [&_i]:text-[var(--accent-blue)] [&_i:last-child]:text-[var(--accent-purple)]"
+            className="flex gap-1 [&_i]:block [&_i]:rotate-[-4deg] [&_i]:text-[1.85rem] [&_i]:leading-[.7] [&_i]:font-black [&_i]:not-italic [&_i]:text-[var(--foreground)] [&_i:last-child]:text-zinc-400 dark:[&_i:last-child]:text-zinc-500"
             aria-hidden="true"
           >
             <i>&lt;</i>
@@ -90,7 +109,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
               <a
                 className={`relative flex items-center text-[.88rem] transition-colors duration-200 hover:text-[var(--foreground)] ${
                   isActive
-                    ? "text-[var(--foreground)] after:absolute after:inset-x-0 after:bottom-[15px] after:h-0.5 after:rounded-full after:bg-[linear-gradient(90deg,var(--accent-blue),var(--accent-purple))] after:shadow-[0_0_12px_rgba(124,108,255,.72)] after:content-['']"
+                    ? "font-semibold text-[var(--foreground)] after:absolute after:inset-x-0 after:bottom-[15px] after:h-[2px] after:bg-zinc-900 dark:after:bg-zinc-100 after:content-['']"
                     : 'text-[var(--secondary)]'
                 }`}
                 href={item.href}
@@ -110,7 +129,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
             aria-label={
               isLight ? text.switchToDark : text.switchToLight
             }
-            onClick={() => setIsLight((value) => !value)}
+            onClick={handleToggleTheme}
           >
             {isLight ? <MoonStar size={18} /> : <Sun size={18} />}
           </button>
@@ -120,11 +139,11 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
             onChange={onLocaleChange}
           />
           <a
-            className="inline-flex h-[43px] w-[42px] items-center justify-center gap-2.5 rounded-[11px] border border-[rgba(117,118,255,.75)] bg-[linear-gradient(135deg,rgba(91,140,255,.15),rgba(124,108,255,.22))] px-0 text-[.88rem] font-[650] shadow-[inset_0_0_20px_rgba(94,118,255,.05),0_0_20px_rgba(80,83,225,.1)] transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-0.5 min-[621px]:w-auto min-[621px]:px-[17px]"
+            className="inline-flex h-[40px] w-[40px] items-center justify-center gap-2 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-0 text-[.84rem] font-semibold transition-all hover:-translate-y-0.5 min-[621px]:w-auto min-[621px]:px-4 shadow-xs"
             href={profile.cv}
             download
           >
-            <Download size={16} />
+            <Download size={15} />
             <span className="hidden min-[621px]:inline">{text.downloadCv}</span>
           </a>
           <button
@@ -154,9 +173,9 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
             const isActive = activeSection === item.href.slice(1);
             return (
               <a
-                className={`rounded-[10px] px-3 py-[11px] text-center transition-colors hover:bg-[rgba(91,140,255,.09)] hover:text-[var(--foreground)] ${
+                className={`rounded-[10px] px-3 py-[11px] text-center transition-colors hover:bg-zinc-100 hover:text-[var(--foreground)] dark:hover:bg-zinc-800 ${
                   isActive
-                    ? 'bg-[rgba(91,140,255,.09)] text-[var(--accent-link)]'
+                    ? 'bg-zinc-100 font-semibold text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100'
                     : 'text-[var(--secondary)]'
                 }`}
                 href={item.href}

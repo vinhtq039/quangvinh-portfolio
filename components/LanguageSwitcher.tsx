@@ -18,7 +18,7 @@ export function LanguageSwitcher({
 }: LanguageSwitcherProps) {
   return (
     <div
-      className="flex h-[38px] items-center gap-0.5 rounded-[10px] border border-[var(--border)] bg-white/[.025] p-[3px]"
+      className="flex h-[38px] items-center gap-0.5 rounded-xl border border-[var(--border)] bg-zinc-100/70 dark:bg-zinc-900/70 p-[3px]"
       role="group"
       aria-label={label}
     >
@@ -26,10 +26,10 @@ export function LanguageSwitcher({
         const isActive = locale === language.value;
         return (
           <button
-            className={`h-[30px] min-w-[31px] cursor-pointer rounded-[7px] px-1.5 text-[.68rem] font-bold tracking-[.04em] transition-[color,background-color,box-shadow] duration-200 ${
+            className={`h-[30px] min-w-[31px] cursor-pointer rounded-[9px] px-2 text-[.7rem] font-mono font-bold transition-all duration-200 ${
               isActive
-                ? 'bg-[linear-gradient(135deg,rgba(91,140,255,.3),rgba(124,108,255,.38))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.16),0_4px_12px_rgba(71,83,210,.16)]'
-                : 'text-[var(--muted)] hover:text-[var(--foreground)]'
+                ? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-950 shadow-xs'
+                : 'text-zinc-500 hover:text-[var(--foreground)]'
             }`}
             key={language.value}
             type="button"

@@ -2,54 +2,75 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 @custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
 
 :root {
-  --background: #080d17;
-  --surface: #101722;
-  --surface-strong: #131c2a;
-  --foreground: #f8fafc;
-  --secondary: #a5b2c6;
-  --muted: #6f7e93;
-  --border: rgba(255, 255, 255, 0.09);
-  --accent-blue: #5b8cff;
-  --accent-purple: #7c6cff;
-  --accent-link: #69a5ff;
-  --accent-hover: #9c8dff;
-  --accent-icon: #8276ff;
-  --accent-icon-hover: #8ea8ff;
-  --project-title: #cbd3ff;
-  --chip-text: #b7c1e7;
-  --icon-text: #cbd4e4;
-  --card-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
-  --nav-background: color-mix(in srgb, var(--background) 84%, transparent);
-  --footer-background: color-mix(in srgb, var(--background) 76%, transparent);
-  --stat-background: rgba(15, 23, 42, 0.42);
-  --project-background: linear-gradient(145deg, rgba(17, 25, 38, 0.9), rgba(12, 20, 32, 0.72));
-  --detail-background: linear-gradient(145deg, rgba(17, 25, 38, 0.82), rgba(12, 20, 32, 0.64));
+  --background: #09090b;
+  --surface: #121215;
+  --surface-strong: #18181b;
+  --surface-subtle: rgba(255, 255, 255, 0.04);
+  --foreground: #fafafa;
+  --secondary: #a1a1aa;
+  --muted: #71717a;
+  --border: rgba(255, 255, 255, 0.1);
+  --accent-blue: #fafafa;
+  --accent-purple: #e4e4e7;
+  --accent-link: #fafafa;
+  --accent-hover: #ffffff;
+  --accent-icon: #e4e4e7;
+  --accent-icon-hover: #ffffff;
+  --project-title: #fafafa;
+  --chip-text: #d4d4d8;
+  --icon-text: #d4d4d8;
+  --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --nav-background: rgba(9, 9, 11, 0.85);
+  --footer-background: rgba(9, 9, 11, 0.95);
+  --stat-background: rgba(24, 24, 27, 0.65);
+  --project-background: rgba(18, 18, 21, 0.7);
+  --detail-background: rgba(18, 18, 21, 0.7);
+  --card-background: rgba(255, 255, 255, 0.035);
+  --card-background-hover: rgba(255, 255, 255, 0.06);
+  --chip-background: rgba(255, 255, 255, 0.05);
+  --badge-background: rgba(255, 255, 255, 0.08);
+  --btn-primary-bg: #fafafa;
+  --btn-primary-fg: #09090b;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.06);
+  --btn-secondary-fg: #fafafa;
 }
 
 :root[data-theme='light'] {
-  --background: #eef3fb;
-  --surface: rgba(255, 255, 255, 0.76);
-  --surface-strong: #ffffff;
-  --foreground: #0d1424;
-  --secondary: #43536c;
-  --muted: #5e6e85;
-  --border: rgba(19, 31, 54, 0.16);
-  --accent-blue: #2f63cf;
-  --accent-purple: #5b43c7;
-  --accent-link: #275fbe;
-  --accent-hover: #583eb9;
-  --accent-icon: #5548c8;
-  --accent-icon-hover: #3159ad;
-  --project-title: #2d468c;
-  --chip-text: #4d5d78;
-  --icon-text: #3e4f68;
-  --card-shadow: 0 24px 70px rgba(55, 72, 108, 0.14);
-  --stat-background: rgba(255, 255, 255, 0.62);
-  --project-background: rgba(255, 255, 255, 0.62);
-  --detail-background: rgba(255, 255, 255, 0.62);
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-strong: #f4f4f5;
+  --surface-subtle: #f4f4f5;
+  --foreground: #09090b;
+  --secondary: #52525b;
+  --muted: #71717a;
+  --border: rgba(0, 0, 0, 0.09);
+  --accent-blue: #09090b;
+  --accent-purple: #27272a;
+  --accent-link: #09090b;
+  --accent-hover: #09090b;
+  --accent-icon: #27272a;
+  --accent-icon-hover: #09090b;
+  --project-title: #09090b;
+  --chip-text: #27272a;
+  --icon-text: #27272a;
+  --card-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
+  --nav-background: rgba(250, 250, 250, 0.88);
+  --footer-background: #fafafa;
+  --stat-background: #ffffff;
+  --project-background: #ffffff;
+  --detail-background: #ffffff;
+  --card-background: #f4f4f5;
+  --card-background-hover: #ebebee;
+  --chip-background: #f4f4f5;
+  --badge-background: #e4e4e7;
+  --btn-primary-bg: #09090b;
+  --btn-primary-fg: #fafafa;
+  --btn-secondary-bg: #f4f4f5;
+  --btn-secondary-fg: #09090b;
 }
 
 @layer base {
@@ -68,12 +89,16 @@
     min-width: 320px;
     overflow-x: clip;
     color: var(--foreground);
-    background:
-      radial-gradient(circle at 5% 32%, rgba(106, 79, 255, 0.14), transparent 29rem),
-      radial-gradient(circle at 94% 17%, rgba(72, 133, 255, 0.13), transparent 32rem),
-      var(--background);
+    background-color: var(--background);
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.035) 0%, transparent 60%);
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-    transition: color 240ms ease, background-color 240ms ease;
+    transition: color 200ms ease, background-color 200ms ease;
+  }
+
+  :root[data-theme='light'] body {
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.025) 0%, transparent 60%);
   }
 
   body::before {
@@ -82,9 +107,13 @@
     inset: 0;
     content: '';
     pointer-events: none;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
     background-size: 100% 48px;
     mask-image: linear-gradient(to bottom, black, transparent 70%);
+  }
+
+  :root[data-theme='light'] body::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px);
   }
 
   a {
@@ -98,38 +127,17 @@
   }
 
   button {
-    color: inherit;
-    font: inherit;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--accent-blue);
-    outline-offset: 4px;
+    font-family: inherit;
   }
 }
 
 @keyframes reveal-up {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(18px);
   }
-
   to {
     opacity: 1;
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transform: translateY(0);
   }
 }

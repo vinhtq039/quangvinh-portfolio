@@ -22,7 +22,7 @@ export function Projects({ locale }: ProjectsProps) {
           action={text.projectsAction}
           href="#projects"
         />
-        <div className="grid grid-cols-1 gap-3.5 min-[621px]:gap-[18px] min-[1101px]:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4.5 min-[680px]:grid-cols-2 min-[1150px]:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard
               key={localize(project.title, locale)}
