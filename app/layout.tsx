@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Alex Dev — Fullstack Developer',
+  title: 'Trần Quang Vĩnh — Kỹ sư Full-Stack',
   description:
-    'Portfolio của Alex Dev — Fullstack Developer xây dựng sản phẩm web hiện đại.',
+    'Portfolio của Trần Quang Vĩnh — Kỹ sư Full-Stack chuyên ReactJS, Next.js, NestJS, Zalo Mini App và tích hợp AI.',
 };
 
 export default function RootLayout({

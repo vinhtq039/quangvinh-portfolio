@@ -37,10 +37,10 @@ export function Hero({ locale }: HeroProps) {
       <div className="mx-auto grid w-[calc(100%-2rem)] max-w-[1280px] grid-cols-1 items-center gap-[34px] min-[621px]:w-[calc(100%-3rem)] min-[621px]:grid-cols-[minmax(225px,260px)_1fr] min-[851px]:grid-cols-[265px_minmax(0,1fr)] min-[851px]:gap-[42px] min-[1101px]:grid-cols-[292px_minmax(0,1fr)_220px] min-[1101px]:gap-[clamp(44px,5vw,72px)]">
         <div className="relative mx-auto aspect-[4/5] w-full max-w-[310px] animate-[reveal-up_.65s_both_ease-out] overflow-hidden rounded-[22px] border border-white/15 bg-[linear-gradient(145deg,#cad6e1,#202938_78%)] shadow-[var(--card-shadow),inset_0_1px_0_rgba(255,255,255,.1)] min-[621px]:mx-0 min-[621px]:max-w-none">
           <div
-            className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_28%,rgba(130,163,196,.42),transparent_25%),linear-gradient(155deg,#182334,#080d17)] text-[5rem] font-extrabold text-white/15"
+            className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_28%,rgba(130,163,196,.42),transparent_25%),linear-gradient(155deg,#182334,#080d17)] text-[4.5rem] font-extrabold text-white/15 tracking-tight"
             aria-hidden="true"
           >
-            <span>AD</span>
+            <span>TQV</span>
           </div>
           <Image
             className="absolute inset-0 size-full object-cover"
@@ -91,7 +91,7 @@ export function Hero({ locale }: HeroProps) {
             </a>
             <a
               className="inline-flex size-12 items-center justify-center rounded-[13px] border border-[var(--border)] bg-white/[.025] transition-[transform,border-color,background-color] duration-200 hover:-translate-y-0.5 hover:border-[rgba(112,164,255,.4)] hover:bg-[rgba(91,140,255,.09)]"
-              href="https://github.com/"
+              href="https://github.com/vinhtq039"
               aria-label={text.viewGithub}
               target="_blank"
               rel="noreferrer"

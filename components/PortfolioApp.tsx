@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { About } from '@/components/About';
+import { Contact } from '@/components/Contact';
 import { Experience } from '@/components/Experience';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
@@ -11,7 +12,7 @@ import { Skills } from '@/components/Skills';
 import type { Locale } from '@/data/portfolio';
 import { uiText } from '@/data/portfolio';
 
-const LANGUAGE_STORAGE_KEY = 'alex-dev-language';
+const LANGUAGE_STORAGE_KEY = 'vinh-portfolio-language';
 
 export function PortfolioApp() {
   const [locale, setLocale] = useState<Locale>('vi');
@@ -47,6 +48,7 @@ export function PortfolioApp() {
         <About locale={locale} />
         <Experience locale={locale} />
       </section>
+      <Contact locale={locale} />
       <Footer locale={locale} />
     </main>
   );

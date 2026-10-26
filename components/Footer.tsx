@@ -1,16 +1,26 @@
 import {
   ArrowRight,
+  Briefcase,
   BriefcaseBusiness,
   Camera,
   Code2,
+  FileText,
+  Globe,
+  Mail,
   MessageCircle,
   Play,
+  Smartphone,
 } from 'lucide-react';
 import type { Locale } from '@/data/portfolio';
 import { profile, socials, uiText } from '@/data/portfolio';
 
-const socialIcons = {
+const socialIcons: Record<string, React.ComponentType<{ size?: number }>> = {
   Github: Code2,
+  Mail: Mail,
+  Smartphone: Smartphone,
+  Globe: Globe,
+  Briefcase: Briefcase,
+  FileText: FileText,
   Linkedin: BriefcaseBusiness,
   Facebook: MessageCircle,
   Instagram: Camera,
@@ -27,7 +37,7 @@ export function Footer({ locale }: FooterProps) {
   return (
     <footer
       className="border-t border-[var(--border)] bg-[var(--footer-background)]"
-      id="contact"
+      id="footer"
     >
       <div className="mx-auto grid w-[calc(100%-2rem)] max-w-[1280px] grid-cols-1 justify-items-center gap-[18px] py-[26px] text-center min-[621px]:min-h-[104px] min-[621px]:w-[calc(100%-3rem)] min-[621px]:grid-cols-[1fr_auto] min-[621px]:items-center min-[621px]:justify-items-stretch min-[621px]:gap-[30px] min-[621px]:py-0 min-[621px]:text-left min-[1101px]:grid-cols-[1fr_auto_1fr]">
         <div>

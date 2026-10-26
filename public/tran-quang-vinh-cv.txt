@@ -1,0 +1,83 @@
+TRẦN QUANG VĨNH — KỸ SƯ FULL-STACK
+=====================================================
+
+Thông tin cá nhân:
+- Họ và tên: Trần Quang Vĩnh
+- Vị trí: Kỹ sư Full-Stack / Frontend Developer
+- Địa chỉ: Hà Nội, Việt Nam
+- Điện thoại: +84 368666407
+- Email: vinhtq039@gmail.com
+- Ngày sinh: 03/09/2001
+- GitHub: https://github.com/vinhtq039
+
+-----------------------------------------------------
+GIỚI THIỆU
+-----------------------------------------------------
+Tôi là Fullstack Developer có kinh nghiệm phát triển frontend từ 06/2022 và trực tiếp xây dựng frontend bằng ReactJS, backend bằng NestJS cho May Academy Exam. Có kinh nghiệm sâu với hệ thống quản trị nội bộ, Zalo Mini App và website WordPress; tích hợp API, phát triển giao diện responsive, tối ưu hiệu năng và ứng dụng AI trong phát triển phần mềm.
+
+-----------------------------------------------------
+ĐIỂM NỔI BẬT
+-----------------------------------------------------
+– 40%: Giảm thời gian tải trang bằng code splitting và lazy loading.
+– 30%: Rút ngắn thời gian phát triển tính năng nhờ component library tái sử dụng.
+– Bvote: Giao diện đa thiết bị hỗ trợ hơn 1.000 người tham gia đồng thời.
+
+-----------------------------------------------------
+KINH NGHIỆM LÀM VIỆC
+-----------------------------------------------------
+1. Frontend Developer · Bvote (01/2026 – Hiện tại)
+   - Phát triển giao diện bỏ phiếu real-time, hiển thị kết quả và tối ưu đa thiết bị cho hơn 1.000 người tham gia đồng thời.
+   - Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.
+   - Trực tiếp phát triển Zalo Mini App (Neobiotech): tích hợp Zalo OAuth (đăng nhập bằng Zalo), Zalo Pay, Zalo Notification, quét QR và trực tiếp quản lý quy trình submit xét duyệt đưa lên Zalo Mini App Store.
+   - Ứng dụng Cursor, Claude Code và MCP trong quy trình phát triển, giúp tối ưu hóa viết test case, refactor code và tăng tốc độ bàn giao tính năng.
+   Công nghệ: React.js, Next.js, TypeScript, Tailwind CSS, Zalo Mini App SDK, Zalo Pay, Cursor, Claude Code, REST API.
+
+2. Frontend Developer · Bytesoft Solutions (06/2022 – 12/2025)
+   - Phát triển và duy trì hệ thống quản lý nội bộ bằng React.js và TypeScript, phục vụ hơn 200 người dùng.
+   - Phát triển landing page và website bằng React.js, Next.js, WordPress; tùy chỉnh theme/plugin WordPress.
+   - Chuyển thiết kế Figma thành responsive UI; quản lý state bằng Redux/Zustand và xây dựng giao diện với Tailwind CSS, Sass.
+   Công nghệ: React.js, Next.js, TypeScript, Redux, Zustand, Tailwind CSS, Sass, WordPress.
+
+-----------------------------------------------------
+DỰ ÁN TIÊU BIỂU
+-----------------------------------------------------
+1. Zalo Mini App Neobiotech (01/2026 – Hiện tại)
+   - Phát triển giao diện Zalo Mini App Neobiotech tối ưu trải nghiệm mobile-first, mượt mà và thân thiện với người dùng theo tiêu chuẩn ZaUI.
+   - Tích hợp các tính năng của Zalo: Zalo OAuth, Zalo Pay, Zalo Notification, quét QR.
+   - Quản lý quy trình build, test (Development/Testing) và submit hồ sơ xét duyệt đưa lên Zalo Mini App Store.
+   Công nghệ: ReactJS, Zalo Mini App SDK, TypeScript, Tailwind CSS, Zalo Pay, Zalo OAuth, REST API.
+
+2. May Academy Exam – Nền tảng thi trực tuyến & quản lý trường học
+   - Nền tảng thi trực tuyến kết hợp quản lý trường học.
+   - Frontend: Trực tiếp phát triển toàn bộ giao diện và luồng nghiệp vụ bài thi bằng ReactJS.
+   - Backend: Xây dựng hệ thống API NestJS, xử lý logic chấm điểm, nghiệp vụ dữ liệu và kết nối cơ sở dữ liệu.
+   - Tích hợp OpenAI/Claude API kết hợp RAG & pgvector để tự động tạo ngân hàng đề thi, giải thích đáp án thông minh và hỗ trợ chấm bài tự luận cho giáo viên.
+   Công nghệ: ReactJS, NestJS, OpenAI API, Claude API, RAG, pgvector, PostgreSQL.
+
+3. Bvote – Hội nghị cổ đông & Nền tảng bỏ phiếu trực tuyến (01/2026 – Hiện tại | bvote.vn)
+   - Phát triển giao diện bỏ phiếu real-time, hiển thị kết quả và tối ưu đa thiết bị cho hơn 1.000 người tham gia đồng thời.
+   - Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.
+   Công nghệ: Next.js, TypeScript, Tailwind CSS, WebSocket, REST API.
+
+4. Boffice – Hệ thống quản trị nội bộ doanh nghiệp (2023 | boffice.bytesoft.vn)
+   - Phát triển dashboard real-time, trực quan hóa dữ liệu và module quản lý dự án với Gantt chart/task tracking.
+   - Tích hợp quản lý nhân sự, chấm công, KPI và tối ưu cho hơn 200 người dùng đồng thời.
+   Công nghệ: ReactJS, TypeScript, Styled Components, WebSocket, REST API.
+
+5. Website WordPress – Lideco.vn và các dự án khác (lideco.vn)
+   - Phát triển, nâng cấp, duy trì và tùy chỉnh giao diện/theme/plugin cho Lideco.vn cùng nhiều website WordPress khác.
+   Công nghệ: WordPress, PHP, HTML5, CSS3, Theme Customization.
+
+-----------------------------------------------------
+KỸ NĂNG CHUYÊN MÔN
+-----------------------------------------------------
+- Frontend: ReactJS, Next.js, Vue.js, Zalo Mini App, TypeScript, JavaScript (ES6), HTML5, CSS3, Sass, Tailwind CSS, Redux, Zustand, Styled Components.
+- Backend: Node.js, NestJS, RESTful API, GraphQL, WebSocket.
+- WordPress: Theme Development, Plugin Customization, Nâng cấp & Duy trì Website.
+- AI / LLM: OpenAI API, Claude API, Prompt Engineering, RAG, Embeddings, pgvector, LangChain, Tool Calling, MCP, Claude Code, Cursor.
+- Công cụ: Git/GitHub, Webpack, Vite, npm, yarn.
+
+-----------------------------------------------------
+HỌC VẤN VÀ CHỨNG CHỈ
+-----------------------------------------------------
+– [Bổ sung trường, ngành học, thời gian học và chứng chỉ liên quan nếu có]
