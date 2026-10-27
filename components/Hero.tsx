@@ -92,7 +92,7 @@ export function Hero({ locale }: HeroProps) {
             </a>
             <a
               className={`${buttonClasses} w-full min-[400px]:w-auto border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600`}
-              href="/cv.html"
+              href="/cv"
             >
               {text.viewCv}
             </a>
