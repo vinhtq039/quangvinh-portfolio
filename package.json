@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "postbuild": "node -e \"const fs=require('fs'); if(fs.existsSync('dist/client/cv.html')){ fs.mkdirSync('dist/client/cv', {recursive:true}); fs.copyFileSync('dist/client/cv.html', 'dist/client/cv/index.html'); }\"",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"
