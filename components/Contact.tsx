@@ -56,9 +56,9 @@ export function Contact({ locale }: ContactProps) {
               </p>
 
               {/* Minimalist Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
                 <a
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--btn-primary-bg)] px-5 text-[.86rem] font-semibold text-[var(--btn-primary-fg)] transition-all hover:opacity-90 shadow-sm"
+                  className="inline-flex h-11 w-full min-[460px]:w-auto items-center justify-center gap-2 rounded-xl bg-[var(--btn-primary-bg)] px-5 text-[.86rem] font-semibold text-[var(--btn-primary-fg)] transition-all hover:opacity-90 shadow-sm"
                   href={profile.zaloUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -68,7 +68,7 @@ export function Contact({ locale }: ContactProps) {
                 </a>
 
                 <a
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] px-5 text-[.86rem] font-semibold text-[var(--btn-secondary-fg)] transition-all hover:border-zinc-400 dark:hover:border-zinc-600"
+                  className="inline-flex h-11 w-full min-[460px]:w-auto items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] px-5 text-[.86rem] font-semibold text-[var(--btn-secondary-fg)] transition-all hover:border-zinc-400 dark:hover:border-zinc-600"
                   href={`tel:${profile.phone}`}
                 >
                   <Phone size={15} className="text-[var(--secondary)]" />
@@ -76,7 +76,7 @@ export function Contact({ locale }: ContactProps) {
                 </a>
 
                 <a
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] px-4 text-[.86rem] font-semibold text-[var(--btn-secondary-fg)] transition-all hover:border-zinc-400 dark:hover:border-zinc-600"
+                  className="inline-flex h-11 w-full min-[460px]:w-auto items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] px-4 text-[.86rem] font-semibold text-[var(--btn-secondary-fg)] transition-all hover:border-zinc-400 dark:hover:border-zinc-600"
                   href={profile.cv}
                   download
                 >

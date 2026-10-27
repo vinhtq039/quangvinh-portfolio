@@ -42,7 +42,7 @@ export function PortfolioApp() {
       <Skills locale={locale} />
       <Projects locale={locale} />
       <section
-        className="mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-[22px] px-4 pt-5 pb-[30px] min-[621px]:w-[calc(100%-3rem)] min-[621px]:px-0 min-[621px]:pt-[26px] min-[621px]:pb-[34px] min-[851px]:grid-cols-[.95fr_1.15fr]"
+        className="mx-auto grid w-[calc(100%-2rem)] max-w-[1280px] grid-cols-1 gap-[22px] pt-5 pb-[30px] min-[621px]:w-[calc(100%-3rem)] min-[621px]:pt-[26px] min-[621px]:pb-[34px] min-[851px]:grid-cols-[.95fr_1.15fr]"
         aria-label={text.aboutExperienceLabel}
       >
         <About locale={locale} />

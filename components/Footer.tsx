@@ -84,7 +84,7 @@ export function Footer({ locale }: FooterProps) {
             {text.footerCta}
           </p>
           <a
-            className="inline-flex h-[41px] w-auto items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-[18px] text-[.86rem] font-semibold transition-all hover:-translate-y-0.5 shadow-xs"
+            className="inline-flex h-[41px] w-full min-[460px]:w-auto items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-[18px] text-[.86rem] font-semibold transition-all hover:-translate-y-0.5 shadow-xs"
             href={`mailto:${profile.email}`}
           >
             {text.contactNow} <ArrowRight size={15} />

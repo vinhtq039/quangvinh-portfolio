@@ -62,7 +62,7 @@ export function Hero({ locale }: HeroProps) {
             <span>👋</span> {text.greeting}
           </div>
 
-          <h1 className="m-0 text-[clamp(3.4rem,18vw,4.8rem)] leading-[.98] font-black tracking-[-.05em] text-[var(--foreground)] min-[621px]:text-[clamp(3.2rem,8.5vw,4.4rem)]">
+          <h1 className="m-0 text-[clamp(2.35rem,8.5vw,4.4rem)] leading-[1.02] font-black tracking-[-.05em] text-[var(--foreground)] break-words">
             {profile.firstName}{' '}
             <span className="text-[var(--secondary)] font-extrabold">
               {profile.lastName}
@@ -82,21 +82,21 @@ export function Hero({ locale }: HeroProps) {
           </p>
 
           {/* CTA Buttons in Minimalist High-Contrast Style */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 min-[621px]:justify-start">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 min-[621px]:justify-start">
             <a
-              className={`${buttonClasses} bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] shadow-xs hover:opacity-90`}
+              className={`${buttonClasses} w-full min-[400px]:w-auto bg-[var(--btn-primary-bg)] text-[var(--btn-primary-fg)] shadow-xs hover:opacity-90`}
               href="#contact"
             >
               {text.contactMe} <ArrowRight size={16} />
             </a>
             <a
-              className={`${buttonClasses} border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600`}
-              href="#projects"
+              className={`${buttonClasses} w-full min-[400px]:w-auto border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600`}
+              href="/cv"
             >
-              {text.viewProjects}
+              {text.viewCv}
             </a>
             <a
-              className="inline-flex size-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600 transition-all hover:-translate-y-0.5"
+              className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600 transition-all hover:-translate-y-0.5"
               href={profile.github}
               aria-label={text.viewGithub}
               target="_blank"

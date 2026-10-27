@@ -31,7 +31,7 @@ export function Skills({ locale }: SkillsProps) {
         />
 
         {/* 12 Minimalist Quick Logo Cards */}
-        <div className="mr-[-16px] grid snap-x snap-proximity grid-cols-[repeat(6,90px)] gap-2.5 overflow-x-auto pb-[9px] pr-4 [scrollbar-width:thin] min-[621px]:mr-0 min-[621px]:grid-cols-4 min-[621px]:overflow-visible min-[621px]:pb-0 min-[621px]:pr-0 min-[851px]:grid-cols-6 min-[1101px]:grid-cols-12">
+        <div className="grid grid-cols-3 min-[460px]:grid-cols-4 min-[621px]:grid-cols-4 min-[851px]:grid-cols-6 min-[1101px]:grid-cols-12 gap-2 sm:gap-2.5">
           {skills.map((skill) => (
             <TechCard key={skill.name} skill={skill} />
           ))}

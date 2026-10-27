@@ -7,7 +7,7 @@ import type { Locale } from '@/data/portfolio';
 import { localize, navigation, profile, uiText } from '@/data/portfolio';
 
 const iconButtonClasses =
-  'inline-flex size-[42px] cursor-pointer items-center justify-center rounded-[11px] border border-[var(--border)] bg-white/[.025] transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[rgba(112,164,255,.4)] hover:bg-[rgba(91,140,255,.09)]';
+  'inline-flex size-[38px] sm:size-[42px] cursor-pointer items-center justify-center rounded-[10px] sm:rounded-[11px] border border-[var(--border)] bg-white/[.025] transition-[transform,border-color,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[rgba(112,164,255,.4)] hover:bg-[rgba(91,140,255,.09)]';
 
 const THEME_STORAGE_KEY = 'vinh-portfolio-theme';
 
@@ -83,18 +83,18 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--nav-background)] backdrop-blur-[18px]">
       <div className="mx-auto grid h-[66px] w-[calc(100%-2rem)] max-w-[1280px] grid-cols-[1fr_auto] items-center min-[621px]:h-[72px] min-[621px]:w-[calc(100%-3rem)] min-[1101px]:grid-cols-[1fr_auto_1fr]">
         <a
-          className="inline-flex w-fit items-center gap-[11px] text-[1.05rem] font-[740] tracking-[-.025em]"
+          className="inline-flex w-fit items-center gap-2 sm:gap-[11px] text-[.92rem] sm:text-[1.05rem] font-[740] tracking-[-.025em] shrink-0"
           href="#home"
           aria-label={text.homeLabel}
         >
           <span
-            className="flex gap-1 [&_i]:block [&_i]:rotate-[-4deg] [&_i]:text-[1.85rem] [&_i]:leading-[.7] [&_i]:font-black [&_i]:not-italic [&_i]:text-[var(--foreground)] [&_i:last-child]:text-zinc-400 dark:[&_i:last-child]:text-zinc-500"
+            className="flex gap-0.5 sm:gap-1 [&_i]:block [&_i]:rotate-[-4deg] [&_i]:text-[1.5rem] sm:[&_i]:text-[1.85rem] [&_i]:leading-[.7] [&_i]:font-black [&_i]:not-italic [&_i]:text-[var(--foreground)] [&_i:last-child]:text-zinc-400 dark:[&_i:last-child]:text-zinc-500"
             aria-hidden="true"
           >
             <i>&lt;</i>
             <i>&gt;</i>
           </span>
-          <span>
+          <span className="hidden sm:inline truncate">
             {profile.firstName} {profile.lastName}
           </span>
         </a>
@@ -122,16 +122,16 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
           })}
         </nav>
 
-        <div className="flex items-center justify-end gap-3">
+        <div className="flex items-center justify-end gap-1.5 sm:gap-2.5 min-[851px]:gap-3">
           <button
-            className={`${iconButtonClasses} max-[620px]:hidden`}
+            className={iconButtonClasses}
             type="button"
             aria-label={
               isLight ? text.switchToDark : text.switchToLight
             }
             onClick={handleToggleTheme}
           >
-            {isLight ? <MoonStar size={18} /> : <Sun size={18} />}
+            {isLight ? <MoonStar size={17} /> : <Sun size={17} />}
           </button>
           <LanguageSwitcher
             locale={locale}
@@ -139,12 +139,14 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
             onChange={onLocaleChange}
           />
           <a
-            className="inline-flex h-[40px] w-[40px] items-center justify-center gap-2 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-0 text-[.84rem] font-semibold transition-all hover:-translate-y-0.5 min-[621px]:w-auto min-[621px]:px-4 shadow-xs"
+            className="inline-flex size-[38px] sm:size-auto sm:h-10 sm:w-auto items-center justify-center gap-2 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-0 sm:px-4 text-[.84rem] font-semibold transition-all hover:-translate-y-0.5 shadow-xs shrink-0 whitespace-nowrap"
             href={profile.cv}
             download
+            aria-label={text.downloadCv}
+            title={text.downloadCv}
           >
-            <Download size={15} />
-            <span className="hidden min-[621px]:inline">{text.downloadCv}</span>
+            <Download size={16} className="shrink-0" />
+            <span className="hidden sm:inline whitespace-nowrap">{text.downloadCv}</span>
           </a>
           <button
             className={`${iconButtonClasses} min-[1101px]:hidden`}
@@ -154,7 +156,7 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
             aria-label={menuOpen ? text.closeMenu : text.openMenu}
             onClick={() => setMenuOpen((value) => !value)}
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {menuOpen ? <X size={19} /> : <Menu size={19} />}
           </button>
         </div>
       </div>

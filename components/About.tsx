@@ -74,24 +74,26 @@ export function About({ locale }: AboutProps) {
           <TrendingUp size={16} className="text-[var(--secondary)]" />
           <span>{text.highlightsTitle}</span>
         </div>
-        <div className="grid grid-cols-1 gap-2.5 min-[520px]:grid-cols-3">
+        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
           {highlights.map((item) => (
             <div
               key={item.metric}
-              className="rounded-lg border border-[var(--border)] bg-[var(--card-background)] p-3.5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-600 shadow-2xs"
+              className="flex flex-col justify-between rounded-lg border border-[var(--border)] bg-[var(--card-background)] p-3 transition-colors hover:border-zinc-400 dark:hover:border-zinc-600 shadow-2xs overflow-hidden"
             >
-              <div className="flex items-baseline justify-between gap-1">
-                <span className="text-2xl font-black font-mono tracking-tight text-[var(--foreground)]">
-                  {item.metric}
-                </span>
-                <span className="rounded border border-[var(--border)] px-1.5 py-0.5 text-[.62rem] font-mono font-semibold uppercase tracking-wider text-[var(--secondary)] bg-[var(--badge-background)]">
-                  {item.badge}
-                </span>
+              <div>
+                <div className="flex flex-wrap items-baseline justify-between gap-1">
+                  <span className="text-[1.35rem] font-black font-mono tracking-tight text-[var(--foreground)]">
+                    {item.metric}
+                  </span>
+                  <span className="rounded border border-[var(--border)] px-1.5 py-0.5 text-[.58rem] font-mono font-semibold uppercase tracking-tight text-[var(--secondary)] bg-[var(--badge-background)] shrink-0">
+                    {item.badge}
+                  </span>
+                </div>
+                <h4 className="mt-1.5 m-0 text-[.78rem] font-bold text-[var(--foreground)] leading-snug">
+                  {localize(item.title, locale)}
+                </h4>
               </div>
-              <h4 className="mt-1.5 m-0 text-[.78rem] font-bold text-[var(--foreground)]">
-                {localize(item.title, locale)}
-              </h4>
-              <p className="mt-1 mb-0 text-[.72rem] leading-snug text-[var(--secondary)]">
+              <p className="mt-1.5 mb-0 text-[.72rem] leading-relaxed text-[var(--secondary)]">
                 {localize(item.description, locale)}
               </p>
             </div>

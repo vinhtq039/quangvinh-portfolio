@@ -141,3 +141,17 @@
     transform: translateY(0);
   }
 }
+
+@media print {
+  @page {
+    margin: 10mm 14mm;
+    size: A4 portrait;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  body::before {
+    display: none !important;
+  }
+}
