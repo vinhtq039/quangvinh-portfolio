@@ -90,12 +90,12 @@ export function Hero({ locale }: HeroProps) {
             >
               {text.contactMe} <ArrowRight size={16} />
             </a>
-            <Link
+            <a
               className={`${buttonClasses} w-full min-[400px]:w-auto border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600`}
-              href="/cv"
+              href="/cv.html"
             >
               {text.viewCv}
-            </Link>
+            </a>
             <a
               className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600 transition-all hover:-translate-y-0.5"
               href={profile.github}

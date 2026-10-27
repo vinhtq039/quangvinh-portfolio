@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/cv", "destination": "/cv.html" },
-    { "source": "/cv/", "destination": "/cv.html" }
+  "routes": [
+    { "src": "^/cv$", "dest": "/cv.html" },
+    { "src": "^/cv/$", "dest": "/cv.html" }
   ]
 }
