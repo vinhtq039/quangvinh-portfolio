@@ -77,8 +77,8 @@ export function Contact({ locale }: ContactProps) {
 
                 <a
                   className="inline-flex h-11 w-full min-[460px]:w-auto items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] px-4 text-[.86rem] font-semibold text-[var(--btn-secondary-fg)] transition-all hover:border-zinc-400 dark:hover:border-zinc-600"
-                  href={profile.cv}
-                  download
+                  href={localize(profile.cv, locale)}
+                  download={locale === 'en' ? 'CV_TRAN_QUANG_VINH_EN.pdf' : 'CV_TRAN_QUANG_VINH.pdf'}
                 >
                   <Download size={15} />
                   <span>{text.downloadCv}</span>

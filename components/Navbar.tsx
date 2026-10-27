@@ -140,8 +140,8 @@ export function Navbar({ locale, onLocaleChange }: NavbarProps) {
           />
           <a
             className="inline-flex size-[38px] sm:size-auto sm:h-10 sm:w-auto items-center justify-center gap-2 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 px-0 sm:px-4 text-[.84rem] font-semibold transition-all hover:-translate-y-0.5 shadow-xs shrink-0 whitespace-nowrap"
-            href={profile.cv}
-            download
+            href={localize(profile.cv, locale)}
+            download={locale === 'en' ? 'CV_TRAN_QUANG_VINH_EN.pdf' : 'CV_TRAN_QUANG_VINH.pdf'}
             aria-label={text.downloadCv}
             title={text.downloadCv}
           >

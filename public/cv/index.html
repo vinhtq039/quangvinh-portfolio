@@ -618,7 +618,10 @@
         langBtn.textContent = 'Tiếng Việt';
         document.getElementById('btn-back').textContent = '← Back to Portfolio';
         document.getElementById('doc-title').textContent = 'resume — tran-quang-vinh.pdf';
-        document.getElementById('btn-download').textContent = '↓ Download PDF';
+        const dlBtn = document.getElementById('btn-download');
+        dlBtn.href = '/CV_TRAN_QUANG_VINH_EN.pdf';
+        dlBtn.download = 'CV_TRAN_QUANG_VINH_EN.pdf';
+        dlBtn.innerHTML = '↓ <span class="btn-text">Download PDF</span>';
         document.getElementById('btn-print').textContent = '⎙ Print';
         document.getElementById('cv-name').textContent = 'Tran Quang Vinh';
         document.getElementById('cv-subtitle').textContent = 'Full-Stack Engineer · Hanoi, Vietnam';

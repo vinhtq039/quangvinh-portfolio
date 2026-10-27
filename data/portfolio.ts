@@ -164,7 +164,10 @@ export const profile = {
     en: "Available for projects & opportunities",
   },
   avatar: "/images/alex-profile.png",
-  cv: "/CV_TRAN_QUANG_VINH.pdf",
+  cv: {
+    vi: "/CV_TRAN_QUANG_VINH.pdf",
+    en: "/CV_TRAN_QUANG_VINH_EN.pdf",
+  },
 };
 
 export const navigation = [

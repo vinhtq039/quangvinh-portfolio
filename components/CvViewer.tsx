@@ -368,8 +368,8 @@ export function CvViewer() {
             </button>
 
             <a
-              href="/CV_TRAN_QUANG_VINH.pdf"
-              download="CV_TRAN_QUANG_VINH.pdf"
+              href={isVi ? '/CV_TRAN_QUANG_VINH.pdf' : '/CV_TRAN_QUANG_VINH_EN.pdf'}
+              download={isVi ? 'CV_TRAN_QUANG_VINH.pdf' : 'CV_TRAN_QUANG_VINH_EN.pdf'}
               className="inline-flex h-8 items-center gap-1.5 rounded-md border border-zinc-200 bg-white px-2.5 sm:px-3 text-xs font-semibold text-zinc-800 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 transition-colors shadow-2xs whitespace-nowrap shrink-0"
               title={isVi ? 'Tải PDF' : 'Download PDF'}
             >
