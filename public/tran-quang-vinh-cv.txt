@@ -3,12 +3,11 @@ TRẦN QUANG VĨNH — KỸ SƯ FULL-STACK
 
 Thông tin cá nhân:
 - Họ và tên: Trần Quang Vĩnh
-- Vị trí: Kỹ sư Full-Stack / Frontend Developer
+- Vị trí: Kỹ sư Full-Stack · Hà Nội, Việt Nam
 - Địa chỉ: Hà Nội, Việt Nam
 - Điện thoại: +84 368666407
 - Email: vinhtq039@gmail.com
-- Ngày sinh: 03/09/2001
-- GitHub: https://github.com/vinhtq039
+- GitHub: @vinhtq (https://github.com/vinhtq039)
 
 -----------------------------------------------------
 GIỚI THIỆU
@@ -43,7 +42,7 @@ DỰ ÁN TIÊU BIỂU
 -----------------------------------------------------
 1. Zalo Mini App Neobiotech (01/2026 – Hiện tại)
    - Phát triển giao diện Zalo Mini App Neobiotech tối ưu trải nghiệm mobile-first, mượt mà và thân thiện với người dùng theo tiêu chuẩn ZaUI.
-   - Tích hợp các tính năng của Zalo: Zalo OAuth, Zalo Pay, Zalo Notification, quét QR.
+   - Tích hợp các tính năng của Zalo: Zalo OAuth (đăng nhập bằng tài khoản Zalo), Zalo Pay, Zalo Notification, quét QR.
    - Quản lý quy trình build, test (Development/Testing) và submit hồ sơ xét duyệt đưa lên Zalo Mini App Store.
    Công nghệ: ReactJS, Zalo Mini App SDK, TypeScript, Tailwind CSS, Zalo Pay, Zalo OAuth, REST API.
 
@@ -59,7 +58,7 @@ DỰ ÁN TIÊU BIỂU
    - Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.
    Công nghệ: Next.js, TypeScript, Tailwind CSS, WebSocket, REST API.
 
-4. Boffice – Hệ thống quản trị nội bộ doanh nghiệp (2023 | boffice.bytesoft.vn)
+4. Boffice – Hệ thống quản trị nội bộ doanh nghiệp (2023)
    - Phát triển dashboard real-time, trực quan hóa dữ liệu và module quản lý dự án với Gantt chart/task tracking.
    - Tích hợp quản lý nhân sự, chấm công, KPI và tối ưu cho hơn 200 người dùng đồng thời.
    Công nghệ: ReactJS, TypeScript, Styled Components, WebSocket, REST API.
@@ -74,10 +73,10 @@ KỸ NĂNG CHUYÊN MÔN
 - Frontend: ReactJS, Next.js, Vue.js, Zalo Mini App, TypeScript, JavaScript (ES6), HTML5, CSS3, Sass, Tailwind CSS, Redux, Zustand, Styled Components.
 - Backend: Node.js, NestJS, RESTful API, GraphQL, WebSocket.
 - WordPress: Theme Development, Plugin Customization, Nâng cấp & Duy trì Website.
-- AI / LLM: OpenAI API, Claude API, Prompt Engineering, RAG, Embeddings, pgvector, LangChain, Tool Calling, MCP, Claude Code, Cursor.
+- AI / LLM: OpenAI API, Claude API, Prompt Engineering, RAG, Embeddings, pgvector, LangChain, MCP, Claude Code, Cursor.
 - Công cụ: Git/GitHub, Webpack, Vite, npm, yarn.
 
 -----------------------------------------------------
 HỌC VẤN VÀ CHỨNG CHỈ
 -----------------------------------------------------
-– [Bổ sung trường, ngành học, thời gian học và chứng chỉ liên quan nếu có]
+– FPT Polytechnic (2019 – 2021)

@@ -99,20 +99,25 @@ export function About({ locale }: AboutProps) {
         </div>
       </div>
 
-      {/* Education & Continuous Learning */}
+      {/* Education & Certifications */}
       <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-subtle)] p-3.5">
-        <div className="flex items-start gap-2.5">
-          <span className="mt-0.5 grid size-6 place-items-center rounded-md border border-[var(--border)] bg-[var(--card-background)] text-[var(--foreground)]">
-            <GraduationCap size={14} />
-          </span>
-          <div className="min-w-0 flex-1">
-            <h4 className="m-0 text-[.8rem] font-bold text-[var(--foreground)]">
-              {text.educationTitle}
-            </h4>
-            <p className="mt-1 mb-0 text-[.74rem] leading-relaxed text-[var(--secondary)]">
-              {text.educationDesc}
-            </p>
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <span className="grid size-8 place-items-center rounded-lg border border-[var(--border)] bg-[var(--card-background)] text-[var(--foreground)]">
+              <GraduationCap size={16} />
+            </span>
+            <div>
+              <div className="text-[.7rem] font-mono uppercase tracking-wider text-[var(--secondary)]">
+                {text.educationTitle}
+              </div>
+              <h4 className="m-0 text-[.86rem] font-bold text-[var(--foreground)]">
+                {profile.educationSchool}
+              </h4>
+            </div>
           </div>
+          <span className="rounded-md border border-[var(--border)] bg-[var(--badge-background)] px-2.5 py-1 text-[.7rem] font-mono font-medium text-[var(--secondary)]">
+            {profile.educationPeriod}
+          </span>
         </div>
       </div>
 

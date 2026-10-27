@@ -97,7 +97,7 @@ export function Hero({ locale }: HeroProps) {
             </a>
             <a
               className="inline-flex size-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-fg)] hover:border-zinc-400 dark:hover:border-zinc-600 transition-all hover:-translate-y-0.5"
-              href="https://github.com/vinhtq039"
+              href={profile.github}
               aria-label={text.viewGithub}
               target="_blank"
               rel="noreferrer"
