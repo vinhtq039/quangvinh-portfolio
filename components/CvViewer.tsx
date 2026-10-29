@@ -190,8 +190,8 @@ const cvData = {
             isBoldPrefix: true,
           },
           {
-            vi: "Tích hợp OpenAI/Claude API kết hợp RAG & pgvector để tự động tạo ngân hàng đề thi, giải thích đáp án thông minh và hỗ trợ chấm bài tự luận cho giáo viên.",
-            en: "Integrated OpenAI/Claude API with RAG & pgvector to generate question banks, intelligent answer explanations, and essay grading support.",
+            vi: "Tích hợp OpenAI/Claude API kết hợp LLM để tự động tạo ngân hàng đề thi, giải thích đáp án thông minh và hỗ trợ chấm bài tự luận cho giáo viên.",
+            en: "Integrated OpenAI/Claude API with LLM to generate question banks, intelligent answer explanations, and essay grading support.",
             isBoldPrefix: false,
           },
         ],
@@ -200,8 +200,7 @@ const cvData = {
           "NestJS",
           "OpenAI API",
           "Claude API",
-          "RAG",
-          "pgvector",
+          "LLM",
           "PostgreSQL",
         ],
       },
@@ -305,11 +304,12 @@ const cvData = {
         ],
       },
       {
-        name: "AI / RAG",
+        name: "AI / LLM",
         tags: [
           "OpenAI API",
           "Claude API",
           "Prompt Engineering",
+          "LLM",
           "RAG",
           "MCP",
           "Claude Code",
@@ -362,7 +362,7 @@ export function CvViewer() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white transition-colors cursor-pointer"
           >
             <ArrowLeft size={16} />
-            <span>{isVi ? 'Portfolio' : 'Back to Portfolio'}</span>
+            <span>{isVi ? "Portfolio" : "Back to Portfolio"}</span>
           </a>
 
           {/* Document Name matching PDF exact title */}

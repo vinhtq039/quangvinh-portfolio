@@ -316,6 +316,7 @@ export const skillCategories = [
       "OpenAI API",
       "Claude API",
       "Prompt Engineering",
+      "LLM",
       "RAG (Retrieval-Augmented Generation)",
       "Model Context Protocol (MCP)",
       "Cursor",
@@ -369,17 +370,17 @@ export const projects = [
   },
   {
     title: {
-      vi: "May Academy Exam – Nền tảng thi & AI RAG",
-      en: "May Academy Exam – Online Exam & AI RAG",
+      vi: "May Academy Exam – Nền tảng thi & AI LLM",
+      en: "May Academy Exam – Online Exam & AI LLM",
     },
-    badge: "AI & RAG Exam Platform",
+    badge: "AI & LLM Exam Platform",
     description: {
-      vi: "Nền tảng thi trực tuyến & quản trị trường học: Frontend ReactJS, Backend NestJS; tích hợp OpenAI/Claude RAG & pgvector tự động tạo ngân hàng đề thi và hỗ trợ chấm tự luận.",
-      en: "Online exam & school management platform: ReactJS frontend, NestJS backend; integrated OpenAI/Claude RAG & pgvector for automated question banks and essay grading.",
+      vi: "Nền tảng thi trực tuyến & quản trị trường học: Frontend ReactJS, Backend NestJS; tích hợp OpenAI/Claude LLM tự động tạo ngân hàng đề thi và hỗ trợ chấm tự luận.",
+      en: "Online exam & school management platform: ReactJS frontend, NestJS backend; integrated OpenAI/Claude LLM for automated question banks and essay grading.",
     },
     highlights: {
-      vi: "Fullstack ReactJS + NestJS · Tự động sinh đề & giải thích đáp án bằng OpenAI/Claude API · pgvector RAG",
-      en: "Fullstack ReactJS + NestJS · AI question bank & auto-grading · pgvector RAG",
+      vi: "Fullstack ReactJS + NestJS · Tự động sinh đề & giải thích đáp án bằng OpenAI/Claude API · LLM",
+      en: "Fullstack ReactJS + NestJS · AI question bank & auto-grading · LLM",
     },
     image: "/images/project-eduhub.png",
     tags: [
@@ -388,7 +389,7 @@ export const projects = [
       "PostgreSQL",
       "OpenAI API",
       "Claude API",
-      "pgvector RAG",
+      "LLM",
     ],
     href: "#contact",
   },
