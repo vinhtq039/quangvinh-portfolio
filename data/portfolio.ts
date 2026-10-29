@@ -263,7 +263,7 @@ export const skills = [
   { name: "PostgreSQL", logo: "/tech/postgresql.svg", color: "#4169e1" },
   { name: "Zalo Mini App", logo: "/tech/zalo.svg", color: "#0068ff" },
   { name: "WordPress", logo: "/tech/wordpress.svg", color: "#21759b" },
-  { name: "AI / LLM / MCP", logo: "/tech/ai.svg", color: "#10a37f" },
+  { name: "AI / RAG / MCP", logo: "/tech/ai.svg", color: "#10a37f" },
   { name: "Git", logo: "/tech/git.svg", color: "#f05032" },
   { name: "Figma", logo: "/tech/figma.svg", color: "#f24e1e" },
 ];
@@ -536,8 +536,8 @@ export const interests = [
     icon: "Sparkles",
     color: "#10b981",
     label: {
-      vi: "AI & LLM (Cursor, Claude, MCP)",
-      en: "AI & LLM (Cursor, Claude, MCP)",
+      vi: "AI & RAG (Cursor, Claude, MCP)",
+      en: "AI & RAG (Cursor, Claude, MCP)",
     },
   },
   {
