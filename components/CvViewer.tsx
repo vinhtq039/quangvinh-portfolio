@@ -363,7 +363,7 @@ export function CvViewer() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white transition-colors"
           >
             <ArrowLeft size={16} />
-            <span>{isVi ? "← Portfolio" : "← Back to Portfolio"}</span>
+            <span>{isVi ? 'Portfolio' : 'Back to Portfolio'}</span>
           </Link>
 
           {/* Document Name matching PDF exact title */}
