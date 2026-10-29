@@ -1,319 +1,337 @@
-'use client';
+"use client";
 
-import { ArrowLeft, Download, Globe, Printer } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
-import type { Locale } from '@/data/portfolio';
+import { ArrowLeft, Download, Globe, Printer } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
+import type { Locale } from "@/data/portfolio";
 
 // Dữ liệu CV đồng bộ 100% với file CV_TRAN_QUANG_VINH.pdf trong thư mục public
 const cvData = {
   name: {
-    vi: 'Trần Quang Vĩnh',
-    en: 'Tran Quang Vinh',
+    vi: "Trần Quang Vĩnh",
+    en: "Tran Quang Vinh",
   },
   role: {
-    vi: 'Kỹ sư Full-Stack · Hà Nội, Việt Nam',
-    en: 'Full-Stack Engineer · Hanoi, Vietnam',
+    vi: "Kỹ sư Full-Stack · Hà Nội, Việt Nam",
+    en: "Full-Stack Engineer · Hanoi, Vietnam",
   },
   contacts: {
-    phone: { label: { vi: 'điện thoại', en: 'phone' }, value: '+84 368666407', href: 'tel:+84368666407' },
-    email: { label: { vi: 'email', en: 'email' }, value: 'vinhtq039@gmail.com', href: 'mailto:vinhtq039@gmail.com' },
-    github: { label: { vi: 'github', en: 'github' }, value: '@vinhtq', href: 'https://github.com/vinhtq' },
-    location: { label: { vi: 'địa chỉ', en: 'location' }, value: { vi: 'Hà Nội, Việt Nam', en: 'Hanoi, Vietnam' } },
+    phone: {
+      label: { vi: "điện thoại", en: "phone" },
+      value: "+84 368666407",
+      href: "tel:+84368666407",
+    },
+    email: {
+      label: { vi: "email", en: "email" },
+      value: "vinhtq039@gmail.com",
+      href: "mailto:vinhtq039@gmail.com",
+    },
+    github: {
+      label: { vi: "github", en: "github" },
+      value: "@vinhtq",
+      href: "https://github.com/vinhtq",
+    },
+    location: {
+      label: { vi: "địa chỉ", en: "location" },
+      value: { vi: "Hà Nội, Việt Nam", en: "Hanoi, Vietnam" },
+    },
   },
   summary: {
-    title: { vi: 'GIỚI THIỆU', en: 'PROFESSIONAL SUMMARY' },
+    title: { vi: "GIỚI THIỆU", en: "PROFESSIONAL SUMMARY" },
     content: {
-      vi: 'Tôi là Fullstack Developer có kinh nghiệm phát triển frontend từ 06/2022 và trực tiếp xây dựng frontend bằng ReactJS, backend bằng NestJS cho May Academy Exam. Có kinh nghiệm sâu với hệ thống quản trị nội bộ, Zalo Mini App và website WordPress; tích hợp API, phát triển giao diện responsive, tối ưu hiệu năng và ứng dụng AI trong phát triển phần mềm.',
-      en: 'Full-Stack Developer with frontend development experience since June 2022, directly building frontends with ReactJS and backends with NestJS for May Academy Exam. Deep production experience with internal management systems, Zalo Mini Apps, and WordPress; API integration, responsive UI development, performance optimization, and practical AI adoption.',
+      vi: "Tôi là Fullstack Developer có kinh nghiệm phát triển frontend từ 06/2022 và trực tiếp xây dựng frontend bằng ReactJS, backend bằng NestJS cho May Academy Exam. Có kinh nghiệm sâu với hệ thống quản trị nội bộ, Zalo Mini App và website WordPress; tích hợp API, phát triển giao diện responsive, tối ưu hiệu năng và ứng dụng AI trong phát triển phần mềm.",
+      en: "Full-Stack Developer with frontend development experience since June 2022, directly building frontends with ReactJS and backends with NestJS for May Academy Exam. Deep production experience with internal management systems, Zalo Mini Apps, and WordPress; API integration, responsive UI development, performance optimization, and practical AI adoption.",
     },
   },
   highlights: {
-    title: { vi: 'ĐIỂM NỔI BẬT', en: 'KEY HIGHLIGHTS' },
+    title: { vi: "ĐIỂM NỔI BẬT", en: "KEY HIGHLIGHTS" },
     items: [
       {
-        metric: '40%:',
+        metric: "40%:",
         text: {
-          vi: 'Giảm thời gian tải trang bằng code splitting và lazy loading.',
-          en: 'Page load time reduction achieved through code splitting and lazy loading.',
+          vi: "Giảm thời gian tải trang bằng code splitting và lazy loading.",
+          en: "Page load time reduction achieved through code splitting and lazy loading.",
         },
       },
       {
-        metric: '30%:',
+        metric: "30%:",
         text: {
-          vi: 'Rút ngắn thời gian phát triển tính năng nhờ component library tái sử dụng.',
-          en: 'Faster feature delivery cycles via standardized reusable component libraries.',
+          vi: "Rút ngắn thời gian phát triển tính năng nhờ component library tái sử dụng.",
+          en: "Faster feature delivery cycles via standardized reusable component libraries.",
         },
       },
       {
-        metric: 'Bvote:',
+        metric: "Bvote:",
         text: {
-          vi: 'Giao diện đa thiết bị hỗ trợ hơn 1.000 người tham gia đồng thời.',
-          en: 'Multi-device UI supporting 1,000+ concurrent attendees in real time.',
+          vi: "Giao diện đa thiết bị hỗ trợ hơn 1.000 người tham gia đồng thời.",
+          en: "Multi-device UI supporting 1,000+ concurrent attendees in real time.",
         },
       },
     ],
   },
   experience: {
-    title: { vi: 'KINH NGHIỆM LÀM VIỆC', en: 'WORK EXPERIENCE' },
+    title: { vi: "KINH NGHIỆM LÀM VIỆC", en: "WORK EXPERIENCE" },
     items: [
       {
-        role: 'Frontend Developer · Bvote',
-        period: { vi: '01/2026 – Hiện tại', en: '01/2026 – Present' },
+        role: "Frontend Developer · Bvote",
+        period: { vi: "01/2026 – Hiện tại", en: "01/2026 – Present" },
         bullets: [
           {
-            vi: 'Phát triển giao diện bỏ phiếu real-time, hiển thị kết quả và tối ưu đa thiết bị cho hơn 1.000 người tham gia đồng thời.',
-            en: 'Developed real-time voting interface, live result tally, and multi-device optimization for 1,000+ concurrent attendees.',
+            vi: "Phát triển giao diện bỏ phiếu real-time, hiển thị kết quả và tối ưu đa thiết bị cho hơn 1.000 người tham gia đồng thời.",
+            en: "Developed real-time voting interface, live result tally, and multi-device optimization for 1,000+ concurrent attendees.",
           },
           {
-            vi: 'Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.',
-            en: 'Integrated video conference/chat and shareholder administrative dashboards for voting result management.',
+            vi: "Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.",
+            en: "Integrated video conference/chat and shareholder administrative dashboards for voting result management.",
           },
           {
-            vi: 'Trực tiếp phát triển Zalo Mini App (Neobiotech): tích hợp Zalo OAuth (đăng nhập bằng Zalo), Zalo Pay, Zalo Notification, quét QR và trực tiếp quản lý quy trình submit xét duyệt đưa lên Zalo Mini App Store.',
-            en: 'Directly built Neobiotech Zalo Mini App: integrated Zalo OAuth, Zalo Pay, Zalo Notification, QR scan, and managed store submission.',
+            vi: "Trực tiếp phát triển Zalo Mini App (Neobiotech): tích hợp Zalo OAuth (đăng nhập bằng Zalo), Zalo Pay, Zalo Notification, quét QR và trực tiếp quản lý quy trình submit xét duyệt đưa lên Zalo Mini App Store.",
+            en: "Directly built Neobiotech Zalo Mini App: integrated Zalo OAuth, Zalo Pay, Zalo Notification, QR scan, and managed store submission.",
           },
           {
-            vi: 'Ứng dụng Cursor, Claude Code và MCP trong quy trình phát triển, giúp tối ưu hóa viết test case, refactor code và tăng tốc độ bàn giao tính năng.',
-            en: 'Leveraged Cursor, Claude Code, and MCP in dev workflows, accelerating feature delivery, refactoring, and test generation.',
+            vi: "Ứng dụng Cursor, Claude Code và MCP trong quy trình phát triển, giúp tối ưu hóa viết test case, refactor code và tăng tốc độ bàn giao tính năng.",
+            en: "Leveraged Cursor, Claude Code, and MCP in dev workflows, accelerating feature delivery, refactoring, and test generation.",
           },
         ],
         tags: [
-          'React.js',
-          'Next.js',
-          'TypeScript',
-          'Tailwind CSS',
-          'Zalo Mini App SDK',
-          'Zalo Pay',
-          'Cursor',
-          'Claude Code',
-          'REST API',
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Zalo Mini App SDK",
+          "Zalo Pay",
+          "Cursor",
+          "Claude Code",
+          "REST API",
         ],
       },
       {
-        role: 'Frontend Developer · Bytesoft Solutions',
-        period: { vi: '06/2022 – 12/2025', en: '06/2022 – 12/2025' },
+        role: "Frontend Developer · Bytesoft Solutions",
+        period: { vi: "06/2022 – 12/2025", en: "06/2022 – 12/2025" },
         bullets: [
           {
-            vi: 'Phát triển và duy trì hệ thống quản lý nội bộ bằng React.js và TypeScript, phục vụ hơn 200 người dùng.',
-            en: 'Developed and maintained internal enterprise ERP management platform using React.js and TypeScript for 200+ users.',
+            vi: "Phát triển và duy trì hệ thống quản lý nội bộ bằng React.js và TypeScript, phục vụ hơn 200 người dùng.",
+            en: "Developed and maintained internal enterprise ERP management platform using React.js and TypeScript for 200+ users.",
           },
           {
-            vi: 'Phát triển landing page và website bằng React.js, Next.js, WordPress; tùy chỉnh theme/plugin WordPress.',
-            en: 'Engineered high-converting landing pages and websites with React.js, Next.js, and WordPress; customized themes and plugins.',
+            vi: "Phát triển landing page và website bằng React.js, Next.js, WordPress; tùy chỉnh theme/plugin WordPress.",
+            en: "Engineered high-converting landing pages and websites with React.js, Next.js, and WordPress; customized themes and plugins.",
           },
           {
-            vi: 'Chuyển thiết kế Figma thành responsive UI; quản lý state bằng Redux/Zustand và xây dựng giao diện với Tailwind CSS, Sass.',
-            en: 'Converted Figma designs into pixel-perfect responsive UI; managed global state with Redux/Zustand and styled with Tailwind CSS, Sass.',
+            vi: "Chuyển thiết kế Figma thành responsive UI; quản lý state bằng Redux/Zustand và xây dựng giao diện với Tailwind CSS, Sass.",
+            en: "Converted Figma designs into pixel-perfect responsive UI; managed global state with Redux/Zustand and styled with Tailwind CSS, Sass.",
           },
         ],
         tags: [
-          'React.js',
-          'Next.js',
-          'TypeScript',
-          'Redux',
-          'Zustand',
-          'Tailwind CSS',
-          'Sass',
-          'WordPress',
+          "React.js",
+          "Next.js",
+          "TypeScript",
+          "Redux",
+          "Zustand",
+          "Tailwind CSS",
+          "Sass",
+          "WordPress",
         ],
       },
     ],
   },
   projects: {
-    title: { vi: 'DỰ ÁN', en: 'PROJECTS' },
+    title: { vi: "DỰ ÁN", en: "PROJECTS" },
     items: [
       {
         title: {
-          vi: 'Zalo Mini App Neobiotech · Ứng dụng Zalo Mini App doanh nghiệp',
-          en: 'Neobiotech Zalo Mini App · Enterprise Mini App',
+          vi: "Zalo Mini App Neobiotech · Ứng dụng Zalo Mini App doanh nghiệp",
+          en: "Neobiotech Zalo Mini App · Enterprise Mini App",
         },
-        period: { vi: '01/2026 – Hiện tại', en: '01/2026 – Present' },
+        period: { vi: "01/2026 – Hiện tại", en: "01/2026 – Present" },
         bullets: [
           {
-            vi: 'Phát triển giao diện Zalo Mini App Neobiotech tối ưu trải nghiệm mobile-first, mượt mà và thân thiện với người dùng theo tiêu chuẩn ZaUI.',
-            en: 'Built mobile-first, responsive ZaUI interface for Neobiotech dental catalog and client booking.',
+            vi: "Phát triển giao diện Zalo Mini App Neobiotech tối ưu trải nghiệm mobile-first, mượt mà và thân thiện với người dùng theo tiêu chuẩn ZaUI.",
+            en: "Built mobile-first, responsive ZaUI interface for Neobiotech dental catalog and client booking.",
           },
           {
-            vi: 'Tích hợp các tính năng của Zalo: Zalo OAuth (đăng nhập bằng tài khoản Zalo), Zalo Pay, Zalo Notification, quét QR.',
-            en: 'Integrated Zalo ecosystem features: Zalo OAuth login, Zalo Pay, notifications, and QR scanning.',
+            vi: "Tích hợp các tính năng của Zalo: Zalo OAuth (đăng nhập bằng tài khoản Zalo), Zalo Pay, Zalo Notification, quét QR.",
+            en: "Integrated Zalo ecosystem features: Zalo OAuth login, Zalo Pay, notifications, and QR scanning.",
           },
           {
-            vi: 'Quản lý quy trình build, test (Development/Testing) và submit hồ sơ xét duyệt đưa lên Zalo Mini App Store.',
-            en: 'Managed build and test environments, successfully submitting the app for review on Zalo Mini App Store.',
+            vi: "Quản lý quy trình build, test (Development/Testing) và submit hồ sơ xét duyệt đưa lên Zalo Mini App Store.",
+            en: "Managed build and test environments, successfully submitting the app for review on Zalo Mini App Store.",
           },
         ],
         tags: [
-          'ReactJS',
-          'Zalo Mini App SDK',
-          'TypeScript',
-          'Tailwind CSS',
-          'Zalo Pay',
-          'Zalo OAuth',
-          'REST API',
+          "ReactJS",
+          "Zalo Mini App SDK",
+          "TypeScript",
+          "Tailwind CSS",
+          "Zalo Pay",
+          "Zalo OAuth",
+          "REST API",
         ],
       },
       {
         title: {
-          vi: 'May Academy Exam · Nền tảng thi trực tuyến & quản lý trường học',
-          en: 'May Academy Exam · Online Exam & School Management',
+          vi: "May Academy Exam · Nền tảng thi trực tuyến & quản lý trường học",
+          en: "May Academy Exam · Online Exam & School Management",
         },
         period: null,
         bullets: [
           {
-            vi: 'Tổng quan: Nền tảng thi trực tuyến kết hợp quản lý trường học.',
-            en: 'Overview: Online testing platform integrated with comprehensive school management.',
+            vi: "Tổng quan: Nền tảng thi trực tuyến kết hợp quản lý trường học.",
+            en: "Overview: Online testing platform integrated with comprehensive school management.",
             isBoldPrefix: true,
           },
           {
-            vi: 'Frontend: Trực tiếp phát triển toàn bộ giao diện và luồng nghiệp vụ bài thi bằng ReactJS.',
-            en: 'Frontend: Directly developed complete examination UI and test execution flow with ReactJS.',
+            vi: "Frontend: Trực tiếp phát triển toàn bộ giao diện và luồng nghiệp vụ bài thi bằng ReactJS.",
+            en: "Frontend: Directly developed complete examination UI and test execution flow with ReactJS.",
             isBoldPrefix: true,
           },
           {
-            vi: 'Backend: Xây dựng hệ thống API NestJS, xử lý logic chấm điểm, nghiệp vụ dữ liệu và kết nối cơ sở dữ liệu.',
-            en: 'Backend: Built scalable NestJS API services, automated grading logic, and data layer.',
+            vi: "Backend: Xây dựng hệ thống API NestJS, xử lý logic chấm điểm, nghiệp vụ dữ liệu và kết nối cơ sở dữ liệu.",
+            en: "Backend: Built scalable NestJS API services, automated grading logic, and data layer.",
             isBoldPrefix: true,
           },
           {
-            vi: 'Tích hợp OpenAI/Claude API kết hợp RAG & pgvector để tự động tạo ngân hàng đề thi, giải thích đáp án thông minh và hỗ trợ chấm bài tự luận cho giáo viên.',
-            en: 'Integrated OpenAI/Claude API with RAG & pgvector to generate question banks, intelligent answer explanations, and essay grading support.',
+            vi: "Tích hợp OpenAI/Claude API kết hợp RAG & pgvector để tự động tạo ngân hàng đề thi, giải thích đáp án thông minh và hỗ trợ chấm bài tự luận cho giáo viên.",
+            en: "Integrated OpenAI/Claude API with RAG & pgvector to generate question banks, intelligent answer explanations, and essay grading support.",
             isBoldPrefix: false,
           },
         ],
         tags: [
-          'ReactJS',
-          'NestJS',
-          'OpenAI API',
-          'Claude API',
-          'RAG',
-          'pgvector',
-          'PostgreSQL',
+          "ReactJS",
+          "NestJS",
+          "OpenAI API",
+          "Claude API",
+          "RAG",
+          "pgvector",
+          "PostgreSQL",
         ],
       },
       {
         title: {
-          vi: 'Bvote · Hội nghị cổ đông & Nền tảng bỏ phiếu trực tuyến',
-          en: 'Bvote · Online Voting & Shareholder Meetings',
+          vi: "Bvote · Hội nghị cổ đông & Nền tảng bỏ phiếu trực tuyến",
+          en: "Bvote · Online Voting & Shareholder Meetings",
         },
-        period: { vi: '01/2026 – Hiện tại', en: '01/2026 – Present' },
-        link: 'bvote.vn',
+        period: { vi: "01/2026 – Hiện tại", en: "01/2026 – Present" },
+        link: "bvote.vn",
         bullets: [
           {
-            vi: 'Phát triển giao diện bỏ phiếu real-time, hiển thị kết quả và tối ưu đa thiết bị cho hơn 1.000 người tham gia đồng thời.',
-            en: 'Built high-throughput real-time voting interface and live tally display for 1,000+ simultaneous attendees.',
+            vi: "Phát triển giao diện bỏ phiếu real-time, hiển thị kết quả và tối ưu đa thiết bị cho hơn 1.000 người tham gia đồng thời.",
+            en: "Built high-throughput real-time voting interface and live tally display for 1,000+ simultaneous attendees.",
           },
           {
-            vi: 'Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.',
-            en: 'Integrated real-time video conferencing, chat, and shareholder administration consoles.',
-          },
-        ],
-        tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'WebSocket', 'REST API'],
-      },
-      {
-        title: {
-          vi: 'Boffice · Hệ thống quản trị nội bộ doanh nghiệp',
-          en: 'Boffice · Enterprise Internal Operations ERP',
-        },
-        period: { vi: '2023', en: '2023' },
-        bullets: [
-          {
-            vi: 'Phát triển dashboard real-time, trực quan hóa dữ liệu và module quản lý dự án với Gantt chart/task tracking.',
-            en: 'Engineered real-time analytics dashboard and project management module with Gantt charts and task tracking.',
-          },
-          {
-            vi: 'Tích hợp quản lý nhân sự, chấm công, KPI và tối ưu cho hơn 200 người dùng đồng thời.',
-            en: 'Integrated human resource, attendance, and KPI tracking optimized for 200+ concurrent enterprise users.',
+            vi: "Tích hợp video conference/chat và dashboard quản lý cổ đông, kết quả biểu quyết, cấu hình chức năng.",
+            en: "Integrated real-time video conferencing, chat, and shareholder administration consoles.",
           },
         ],
         tags: [
-          'ReactJS',
-          'TypeScript',
-          'Styled Components',
-          'WebSocket',
-          'REST API',
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "WebSocket",
+          "REST API",
         ],
       },
       {
         title: {
-          vi: 'Website WordPress · Lideco.vn và các dự án khác',
-          en: 'WordPress Websites · Lideco.vn & Client Projects',
+          vi: "Boffice · Hệ thống quản trị nội bộ doanh nghiệp",
+          en: "Boffice · Enterprise Internal Operations ERP",
         },
-        period: null,
-        link: 'lideco.vn',
+        period: { vi: "2023", en: "2023" },
         bullets: [
           {
-            vi: 'Phát triển, nâng cấp, duy trì và tùy chỉnh giao diện/theme/plugin cho Lideco.vn cùng nhiều website WordPress khác.',
-            en: 'Developed, customized, and maintained WordPress themes and plugins for Lideco.vn and high-traffic corporate portals.',
+            vi: "Phát triển dashboard real-time, trực quan hóa dữ liệu và module quản lý dự án với Gantt chart/task tracking.",
+            en: "Engineered real-time analytics dashboard and project management module with Gantt charts and task tracking.",
+          },
+          {
+            vi: "Tích hợp quản lý nhân sự, chấm công, KPI và tối ưu cho hơn 200 người dùng đồng thời.",
+            en: "Integrated human resource, attendance, and KPI tracking optimized for 200+ concurrent enterprise users.",
           },
         ],
-        tags: ['WordPress', 'PHP', 'HTML5', 'CSS3', 'Theme Customization'],
+        tags: [
+          "ReactJS",
+          "TypeScript",
+          "Styled Components",
+          "WebSocket",
+          "REST API",
+        ],
+      },
+      {
+        title: {
+          vi: "Website WordPress · Lideco.vn và các dự án khác",
+          en: "WordPress Websites · Lideco.vn & Client Projects",
+        },
+        period: null,
+        link: "lideco.vn",
+        bullets: [
+          {
+            vi: "Phát triển, nâng cấp, duy trì và tùy chỉnh giao diện/theme/plugin cho Lideco.vn cùng nhiều website WordPress khác.",
+            en: "Developed, customized, and maintained WordPress themes and plugins for Lideco.vn and high-traffic corporate portals.",
+          },
+        ],
+        tags: ["WordPress", "PHP", "HTML5", "CSS3", "Theme Customization"],
       },
     ],
   },
   skills: {
-    title: { vi: 'KỸ NĂNG', en: 'TECHNICAL SKILLS' },
+    title: { vi: "KỸ NĂNG", en: "TECHNICAL SKILLS" },
     categories: [
       {
-        name: 'Frontend',
+        name: "Frontend",
         tags: [
-          'ReactJS',
-          'Next.js',
-          'Vue.js',
-          'Zalo Mini App',
-          'TypeScript',
-          'JavaScript (ES6)',
-          'HTML5',
-          'CSS3',
-          'Sass',
-          'Tailwind CSS',
-          'Redux',
-          'Zustand',
-          'Styled Components',
+          "ReactJS",
+          "Next.js",
+          "Vue.js",
+          "Zalo Mini App",
+          "TypeScript",
+          "JavaScript (ES6)",
+          "HTML5",
+          "CSS3",
+          "Sass",
+          "Tailwind CSS",
+          "Redux",
+          "Zustand",
+          "Styled Components",
         ],
       },
       {
-        name: 'Backend',
-        tags: ['Node.js', 'NestJS', 'RESTful API', 'GraphQL', 'WebSocket'],
+        name: "Backend",
+        tags: ["Node.js", "NestJS", "RESTful API", "GraphQL", "WebSocket"],
       },
       {
-        name: 'WordPress',
+        name: "WordPress",
         tags: [
-          'Theme Development',
-          'Plugin Customization',
-          'Nâng cấp & Duy trì Website',
+          "Theme Development",
+          "Plugin Customization",
+          "Nâng cấp & Duy trì Website",
         ],
       },
       {
-        name: 'AI / LLM',
+        name: "AI / RAG",
         tags: [
-          'OpenAI API',
-          'Claude API',
-          'Prompt Engineering',
-          'RAG',
-          'Embeddings',
-          'pgvector',
-          'LangChain',
-          'MCP',
-          'Claude Code',
-          'Cursor',
+          "OpenAI API",
+          "Claude API",
+          "Prompt Engineering",
+          "RAG",
+          "MCP",
+          "Claude Code",
+          "Cursor",
         ],
       },
       {
-        name: { vi: 'Công cụ', en: 'Tools' },
-        tags: ['Git/GitHub', 'Webpack', 'Vite', 'npm', 'yarn'],
+        name: { vi: "Công cụ", en: "Tools" },
+        tags: ["Git/GitHub", "Webpack", "Vite", "npm", "yarn"],
       },
     ],
   },
   education: {
-    title: { vi: 'HỌC VẤN VÀ CHỨNG CHỈ', en: 'EDUCATION & CERTIFICATIONS' },
+    title: { vi: "HỌC VẤN VÀ CHỨNG CHỈ", en: "EDUCATION & CERTIFICATIONS" },
     items: [
       {
-        school: 'FPT Polytechnic',
-        period: '(2019 – 2021)',
+        school: "FPT Polytechnic",
+        period: "(2019 – 2021)",
         detail: {
-          vi: 'Chuyên ngành Thiết kế Website / Công nghệ thông tin',
-          en: 'Web Design & Information Technology',
+          vi: "Chuyên ngành Thiết kế Website / Công nghệ thông tin",
+          en: "Web Design & Information Technology",
         },
       },
     ],
@@ -321,15 +339,15 @@ const cvData = {
 };
 
 export function CvViewer() {
-  const [locale, setLocale] = useState<Locale>('vi');
-  const isVi = locale === 'vi';
+  const [locale, setLocale] = useState<Locale>("vi");
+  const isVi = locale === "vi";
 
   const toggleLocale = () => {
-    setLocale((prev) => (prev === 'vi' ? 'en' : 'vi'));
+    setLocale((prev) => (prev === "vi" ? "en" : "vi"));
   };
 
   const handlePrint = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.print();
     }
   };
@@ -345,14 +363,14 @@ export function CvViewer() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white transition-colors"
           >
             <ArrowLeft size={16} />
-            <span>{isVi ? '← Portfolio' : '← Back to Portfolio'}</span>
+            <span>{isVi ? "← Portfolio" : "← Back to Portfolio"}</span>
           </Link>
 
           {/* Document Name matching PDF exact title */}
           <div className="hidden sm:block font-mono text-xs text-zinc-500 dark:text-zinc-400 truncate max-w-[280px] md:max-w-none">
             {isVi
-              ? 'sơ yếu lý lịch — tran-quang-vinh.pdf'
-              : 'resume — tran-quang-vinh.pdf'}
+              ? "sơ yếu lý lịch — tran-quang-vinh.pdf"
+              : "resume — tran-quang-vinh.pdf"}
           </div>
 
           {/* Actions */}
@@ -361,30 +379,38 @@ export function CvViewer() {
               type="button"
               onClick={toggleLocale}
               className="inline-flex h-8 items-center gap-1.5 rounded-md border border-zinc-200 bg-zinc-50 px-2 sm:px-2.5 text-xs font-medium text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white transition-colors"
-              title={isVi ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
+              title={isVi ? "Switch to English" : "Chuyển sang Tiếng Việt"}
             >
               <Globe size={13} />
-              <span>{isVi ? 'EN' : 'VI'}</span>
+              <span>{isVi ? "EN" : "VI"}</span>
             </button>
 
             <a
-              href={isVi ? '/CV_TRAN_QUANG_VINH.pdf' : '/CV_TRAN_QUANG_VINH_EN.pdf'}
-              download={isVi ? 'CV_TRAN_QUANG_VINH.pdf' : 'CV_TRAN_QUANG_VINH_EN.pdf'}
+              href={
+                isVi ? "/CV_TRAN_QUANG_VINH.pdf" : "/CV_TRAN_QUANG_VINH_EN.pdf"
+              }
+              download={
+                isVi ? "CV_TRAN_QUANG_VINH.pdf" : "CV_TRAN_QUANG_VINH_EN.pdf"
+              }
               className="inline-flex h-8 items-center gap-1.5 rounded-md border border-zinc-200 bg-white px-2.5 sm:px-3 text-xs font-semibold text-zinc-800 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 transition-colors shadow-2xs whitespace-nowrap shrink-0"
-              title={isVi ? 'Tải PDF' : 'Download PDF'}
+              title={isVi ? "Tải PDF" : "Download PDF"}
             >
               <Download size={13} className="shrink-0" />
-              <span className="hidden sm:inline whitespace-nowrap">{isVi ? 'Tải PDF' : 'Download PDF'}</span>
+              <span className="hidden sm:inline whitespace-nowrap">
+                {isVi ? "Tải PDF" : "Download PDF"}
+              </span>
             </a>
 
             <button
               type="button"
               onClick={handlePrint}
               className="inline-flex h-8 items-center gap-1.5 rounded-md bg-zinc-900 px-2.5 sm:px-3.5 text-xs font-semibold text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white transition-colors shadow-2xs whitespace-nowrap shrink-0"
-              title={isVi ? 'In' : 'Print'}
+              title={isVi ? "In" : "Print"}
             >
               <Printer size={13} className="shrink-0" />
-              <span className="hidden sm:inline whitespace-nowrap">{isVi ? 'In' : 'Print'}</span>
+              <span className="hidden sm:inline whitespace-nowrap">
+                {isVi ? "In" : "Print"}
+              </span>
             </button>
           </div>
         </div>
@@ -393,7 +419,6 @@ export function CvViewer() {
       {/* CV Paper Workspace */}
       <main className="py-4 sm:py-8 px-2.5 sm:px-6 print:p-0">
         <article className="mx-auto max-w-[820px] bg-white text-[#1e293b] shadow-xl border border-zinc-200/90 rounded-[2px] p-5 sm:p-10 md:p-14 font-sans print:shadow-none print:border-none print:p-0 print:m-0 print:max-w-none">
-          
           {/* Header */}
           <header className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b-[1.5px] border-[#111827]">
             <div>
@@ -408,7 +433,9 @@ export function CvViewer() {
             {/* Contacts Table in Consolas Monospace - Perfectly aligned two columns like reference */}
             <div className="font-mono text-xs sm:text-[.82rem] leading-[1.65] grid grid-cols-[auto_auto] gap-x-3.5 sm:gap-x-5 gap-y-1 sm:ml-auto w-fit text-left">
               <span className="text-[#64748b]">
-                {isVi ? cvData.contacts.phone.label.vi : cvData.contacts.phone.label.en}
+                {isVi
+                  ? cvData.contacts.phone.label.vi
+                  : cvData.contacts.phone.label.en}
               </span>
               <a
                 href={cvData.contacts.phone.href}
@@ -418,7 +445,9 @@ export function CvViewer() {
               </a>
 
               <span className="text-[#64748b]">
-                {isVi ? cvData.contacts.email.label.vi : cvData.contacts.email.label.en}
+                {isVi
+                  ? cvData.contacts.email.label.vi
+                  : cvData.contacts.email.label.en}
               </span>
               <a
                 href={cvData.contacts.email.href}
@@ -428,7 +457,9 @@ export function CvViewer() {
               </a>
 
               <span className="text-[#64748b]">
-                {isVi ? cvData.contacts.github.label.vi : cvData.contacts.github.label.en}
+                {isVi
+                  ? cvData.contacts.github.label.vi
+                  : cvData.contacts.github.label.en}
               </span>
               <a
                 href={cvData.contacts.github.href}
@@ -440,10 +471,14 @@ export function CvViewer() {
               </a>
 
               <span className="text-[#64748b]">
-                {isVi ? cvData.contacts.location.label.vi : cvData.contacts.location.label.en}
+                {isVi
+                  ? cvData.contacts.location.label.vi
+                  : cvData.contacts.location.label.en}
               </span>
               <span className="text-[#111827]">
-                {isVi ? cvData.contacts.location.value.vi : cvData.contacts.location.value.en}
+                {isVi
+                  ? cvData.contacts.location.value.vi
+                  : cvData.contacts.location.value.en}
               </span>
             </div>
           </header>
@@ -553,8 +588,8 @@ export function CvViewer() {
                 <ul className="mt-1.5 space-y-1 text-[.84rem] sm:text-[.85rem] leading-[1.56] text-[#374151]">
                   {proj.bullets.map((bullet, bIdx) => {
                     const text = isVi ? bullet.vi : bullet.en;
-                    if (bullet.isBoldPrefix && text.includes(':')) {
-                      const [prefix, ...rest] = text.split(':');
+                    if (bullet.isBoldPrefix && text.includes(":")) {
+                      const [prefix, ...rest] = text.split(":");
                       return (
                         <li key={bIdx} className="flex items-start gap-2">
                           <span className="text-[#9ca3af] select-none">–</span>
@@ -562,7 +597,7 @@ export function CvViewer() {
                             <strong className="font-semibold text-[#111827] mr-1">
                               {prefix}:
                             </strong>
-                            {rest.join(':')}
+                            {rest.join(":")}
                           </span>
                         </li>
                       );
@@ -599,7 +634,7 @@ export function CvViewer() {
             <div className="space-y-2.5">
               {cvData.skills.categories.map((cat, idx) => {
                 const catName =
-                  typeof cat.name === 'string'
+                  typeof cat.name === "string"
                     ? cat.name
                     : isVi
                       ? cat.name.vi

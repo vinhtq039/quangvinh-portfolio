@@ -317,8 +317,6 @@ export const skillCategories = [
       "Claude API",
       "Prompt Engineering",
       "RAG (Retrieval-Augmented Generation)",
-      "Embeddings & pgvector",
-      "LangChain",
       "Model Context Protocol (MCP)",
       "Cursor",
       "Claude Code",
