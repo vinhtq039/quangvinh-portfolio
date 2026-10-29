@@ -6,7 +6,6 @@ import {
   MapPin,
   UsersRound,
 } from 'lucide-react';
-import Link from 'next/link';
 import type { Locale } from '@/data/portfolio';
 import { localize, profile, stats, uiText } from '@/data/portfolio';
 

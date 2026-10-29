@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowLeft, Download, Globe, Printer } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import type { Locale } from "@/data/portfolio";
 
@@ -358,13 +357,13 @@ export function CvViewer() {
       <header className="sticky top-0 z-40 border-b border-zinc-200/90 bg-white/95 dark:border-zinc-800 dark:bg-zinc-950/90 backdrop-blur-md print:hidden">
         <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
           {/* Back button */}
-          <Link
+          <a
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white transition-colors cursor-pointer"
           >
             <ArrowLeft size={16} />
             <span>{isVi ? 'Portfolio' : 'Back to Portfolio'}</span>
-          </Link>
+          </a>
 
           {/* Document Name matching PDF exact title */}
           <div className="hidden sm:block font-mono text-xs text-zinc-500 dark:text-zinc-400 truncate max-w-[280px] md:max-w-none">
