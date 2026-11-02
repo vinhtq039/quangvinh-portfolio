@@ -293,7 +293,7 @@ const cvData = {
       },
       {
         name: "Backend",
-        tags: ["Node.js", "NestJS", "RESTful API", "GraphQL", "WebSocket"],
+        tags: ["Node.js", "NestJS", "RESTful API", "WebSocket"],
       },
       {
         name: "WordPress",

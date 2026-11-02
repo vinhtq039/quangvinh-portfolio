@@ -296,14 +296,7 @@ export const skillCategories = [
     title: { vi: "Backend & Cơ sở dữ liệu", en: "Backend & Data Services" },
     icon: "Server",
     color: "#e0234e",
-    items: [
-      "NestJS",
-      "Node.js",
-      "RESTful API",
-      "GraphQL",
-      "WebSocket",
-      "PostgreSQL",
-    ],
+    items: ["NestJS", "Node.js", "RESTful API", "WebSocket", "PostgreSQL"],
   },
   {
     title: {

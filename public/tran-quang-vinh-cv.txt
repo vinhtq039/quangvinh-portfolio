@@ -71,7 +71,7 @@ DỰ ÁN TIÊU BIỂU
 KỸ NĂNG CHUYÊN MÔN
 -----------------------------------------------------
 - Frontend: ReactJS, Next.js, Vue.js, Zalo Mini App, TypeScript, JavaScript (ES6), HTML5, CSS3, Sass, Tailwind CSS, Redux, Zustand, Styled Components.
-- Backend: Node.js, NestJS, RESTful API, GraphQL, WebSocket.
+- Backend: Node.js, NestJS, RESTful API, WebSocket.
 - WordPress: Theme Development, Plugin Customization, Nâng cấp & Duy trì Website.
 - AI / RAG: OpenAI API, Claude API, Prompt Engineering, RAG, MCP, Claude Code, Cursor.
 - Công cụ: Git/GitHub, Webpack, Vite, npm, yarn.
